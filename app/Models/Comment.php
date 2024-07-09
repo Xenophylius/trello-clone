@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Card extends Model
+class Comment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['title', 'board_id', 'user_id', 'lists_id', 'description'];
+    protected $fillable = ['title', 'board_id', 'user_id', 'lists_id', 'card_id', 'description'];
 
     public function board()
     {
@@ -24,5 +24,10 @@ class Card extends Model
     public function lists()
     {
         return $this->belongsTo(Lists::class);
+    }
+
+    public function card()
+    {
+        return $this->belongsTo(Card::class);
     }
 }

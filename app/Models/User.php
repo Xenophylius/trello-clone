@@ -48,4 +48,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Board::class);
     }
+
+    public function lists(): HasMany
+    {
+        return $this->hasMany(Lists::class);
+    }
+
+    public function card(): HasMany
+    {
+        return $this->hasMany(Card::class);
+    }
+
+    public function comment(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
 }
